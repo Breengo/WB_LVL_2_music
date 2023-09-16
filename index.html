@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/WB_LVL_2_music/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/WB_LVL_2_music/assets/index-0d2f2bb6.js"></script>
+    <link rel="stylesheet" href="/WB_LVL_2_music/assets/index-6fa89017.css">
+  </head>
+  <body>
+    <h1>Музыка</h1>
+    <div id="waveform"></div>
+    <div id="player">
+      <button id="play">
+        <img src="/WB_LVL_2_music/assets/play-1f8e9e1f.svg" alt="error" />
+      </button>
+      <img id="cycle_button" src="/WB_LVL_2_music/assets/circle-89fa1a5b.svg" alt="error" />
+      <img id="random_button" src="/WB_LVL_2_music/assets/random-aff75743.svg" alt="error" />
+      <div id="timeline">
+        <p id="time"></p>
+        <p id="duration"></p>
+        <div id="current_time"></div>
+      </div>
+      <div id="volume_container">
+        <img src="/WB_LVL_2_music/assets/volume-2bc50b16.svg" alt="error" />
+        <div id="volume">
+          <div id="current_volume"></div>
+        </div>
+      </div>
+    </div>
+    <div id="music">
+      <div id="playlist" class="music_list">
+        <h2>Плейлист</h2>
+      </div>
+      <div id="all_music" class="music_list">
+        <h2>Музыка</h2>
+      </div>
+      <div id="upload">
+        <h2>Добавить аудиозапись</h2>
+        <input class="text_input" placeholder="Исполнитель" type="text" />
+        <input class="text_input" placeholder="Название" type="text" />
+        <input type="file" />
+        <button id="upload_button">Добавить</button>
+      </div>
+    </div>
+    
+  </body>
+</html>
