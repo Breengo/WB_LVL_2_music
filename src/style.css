@@ -1,0 +1,277 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+}
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 200px;
+}
+
+#waveform {
+  width: 100%;
+}
+
+#player {
+  margin-top: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.103);
+  padding: 15px 30px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+#timeline {
+  margin-top: 20px;
+  position: relative;
+  width: 500px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#time {
+  position: absolute;
+  top: -30px;
+  left: 0px;
+  font-size: 20px;
+}
+
+#duration {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  font-size: 20px;
+}
+
+#cycle_button {
+  width: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#random_button {
+  width: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#cycle_button:hover {
+  scale: 1.1;
+}
+
+#random_button:hover {
+  scale: 1.1;
+}
+
+#current_time {
+  width: 0;
+  height: 10px;
+  background-color: rgba(98, 0, 255, 0.419);
+  border-radius: 5px;
+}
+
+#volume_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#volume_container > img {
+  width: 25px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#volume {
+  width: 50px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#current_volume {
+  width: 100%;
+  background-color: rgba(98, 0, 255, 0.419);
+  border-radius: 5px;
+  height: 10px;
+}
+
+#play {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+#play > img {
+  width: 32px;
+  transition: 0.3s;
+}
+
+#play > img:hover {
+  scale: 1.05;
+}
+
+#music {
+  margin-top: 10px;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.171);
+  padding-top: 50px;
+  border-radius: 50px;
+}
+
+.music_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  height: 400px;
+  overflow-y: auto;
+  padding-bottom: 30px;
+  padding-right: 20px;
+}
+
+.music_list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.music_list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.041);
+  border-radius: 20px;
+}
+
+.music_list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 20px;
+}
+
+.music_list > p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.123);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.music_list > h2 {
+  z-index: 10;
+  position: sticky;
+  background-color: #242424;
+  padding-bottom: 5px;
+  width: 100%;
+  top: 0;
+}
+
+.favorites_add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.favorites_add:hover > span {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.favorites_add > span {
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+
+.active > :first-child {
+  rotate: 90deg;
+}
+
+.active > span {
+  rotate: 0deg;
+}
+
+.inactive > :first-child {
+  rotate: 45deg;
+}
+
+.inactive > span {
+  rotate: -45deg;
+}
+
+.music_list > p:hover {
+  background-color: rgba(255, 255, 255, 0.123);
+}
+
+.music_list > .current:hover {
+  background-color: rgba(98, 0, 255, 0.219);
+}
+
+.current {
+  background-color: rgba(98, 0, 255, 0.219);
+}
+
+#upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.text_input {
+  border: none;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.151);
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.844);
+  font-weight: 600;
+}
+
+#upload_button {
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#upload_button:hover {
+  background-color: rgba(255, 255, 255, 0.103);
+}
